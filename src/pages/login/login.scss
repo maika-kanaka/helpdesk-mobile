@@ -1,0 +1,30 @@
+page-login {
+    .header {
+      padding: 20px 0px 20px 0px;
+      background: color($colors, mytheme, base);
+      color: color($colors, mytheme, contrast);
+      
+      .logo {
+        width: 120px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        margin: 0px;
+      }
+  
+      .version {
+        padding-top: 10px;
+        color: #fff;
+      }
+    }
+  
+    .col-forgot-password {
+      padding-top: 17px;
+    }
+  
+    a.forgot {
+      text-decoration: none;
+    }
+  }
+  

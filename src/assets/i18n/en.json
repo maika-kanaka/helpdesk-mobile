@@ -1,0 +1,62 @@
+{
+  "master": {
+    "home": "Main Page",
+    "categories": "Categories",
+    "category": "Category",
+    "recording": "Recording",
+      "record_add": "Add Record",
+    "report": "Report",
+    "settings": "Settings",
+
+    "language": "Language",
+    "indonesia": "Indonesia",
+    "english": "English",
+    "java": "Java",
+    "sunda": "Sunda",
+    "choose": "Choose",
+    "date": "Date",
+    "notes": "Notes",
+    "location": "Location",
+    "screenshot": "Screenshot",
+
+    "save": "Save",
+    "fullname": "Fullname",
+    "email": "Email",
+    "password": "Password",
+    "confirm_password": "Confirm Password",
+    "login": "Login",
+    "logout": "Logout",
+    "or": "Or"
+  },
+
+  "login": {
+    "create_a_new_account": "Create a new account",
+    "sign_up": "Sign Up",
+    "forgot_password": "Forgot Password ?",
+    "its_free": "It's free and always will be."
+  },
+
+  "home": {
+    "greeting": "Hi, {{ name }}"
+  },
+
+  "setting": {
+    "general": "General",
+    "currency": "Currency",
+    "shorten_amount": "Shorten Amount",
+    "decimal_separator": "Decimal Separator",
+
+    "reminder": "Reminder",
+    "repeat": "Repeat",
+    "daily": "Daily",
+    "weekly": "Weekly",
+    "monthly": "Monthly",
+    "time": "Time",
+    "day": "Day",
+
+    "about": "About",
+    "version": "Version",
+    "changelogs": "Change Logs",
+    "about_rembesanku": "<strong>Rembesanku</strong> adalah aplikasi yang akan memudahkan Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  }
+}

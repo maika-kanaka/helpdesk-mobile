@@ -1,0 +1,57 @@
+<ion-content>
+  <div class="header" text-center>
+    <div class="logo">
+      <img src="assets/imgs/helpdesk.png" alt="">
+    </div>
+
+    <h1> Helpdesk </h1>
+    
+    <div class="version">
+      1.0.0
+    </div>
+  </div>
+
+  <!-- <form padding (submit)="doLogin()"> -->
+    <ion-list>
+
+      <ion-item>
+        <ion-label stacked>{{ 'master.email' | translate }}</ion-label>
+        <ion-input type="email" [(ngModel)]="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>{{ 'master.password' | translate }}</ion-label>
+        <ion-input type="password" [(ngModel)]="password"></ion-input>
+      </ion-item>
+
+      <div>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-5>
+              <button (click)="doLogin()" ion-button color="primary">{{ 'master.login' | translate }}</button>
+            </ion-col>
+
+            <ion-col col-7 text-right class="col-forgot-password">
+              <a (click)="pageForgotPassword()" class="forgot">
+                {{ 'login.forgot_password' | translate }}
+              </a>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col col-12 text-center>
+              ---- or ----
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col col-12 text-center>
+              <a (click)="pageSignUp()" ion-button color="light" block>{{ 'login.sign_up' | translate }}</a>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+    </ion-list>
+  <!-- </form> -->
+</ion-content>
