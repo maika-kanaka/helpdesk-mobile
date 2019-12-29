@@ -22,6 +22,7 @@
     "save": "Save",
     "fullname": "Fullname",
     "email": "Email",
+    "email_or_username": "Email or Username",
     "password": "Password",
     "confirm_password": "Confirm Password",
     "login": "Login",
