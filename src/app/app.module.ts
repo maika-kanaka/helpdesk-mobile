@@ -9,13 +9,21 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 import { MyApp } from './app.component';
 import { LoginPage } from '../pages/login/login';
-import { HomePage } from '../pages/home/home';
+import { DashboardPage } from '../pages/dashboard/dashboard';
+import { TicketsPage } from '../pages/tickets/tickets';
+import { ReportsPage } from '../pages/reports/reports';
+import { UsersPage } from '../pages/users/users';
+import { MainTabPage } from '../pages/main-tab/main-tab';
 
 @NgModule({
   declarations: [
     MyApp,
     LoginPage,
-    HomePage
+    DashboardPage,
+    TicketsPage,
+    ReportsPage,
+    UsersPage,
+    MainTabPage
   ],
   imports: [
     BrowserModule,
@@ -33,7 +41,11 @@ import { HomePage } from '../pages/home/home';
   entryComponents: [
     MyApp,
     LoginPage,
-    HomePage
+    DashboardPage,
+    TicketsPage,
+    ReportsPage,
+    UsersPage,
+    MainTabPage
   ],
   providers: [
     StatusBar,

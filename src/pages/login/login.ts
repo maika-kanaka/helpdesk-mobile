@@ -3,7 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import $ from 'jquery';
 
-import { HomePage } from '../home/home';
+import { DashboardPage } from '../dashboard/dashboard';
+import { MainTabPage } from '../main-tab/main-tab';
 import { environment as ENV } from '../../environments/environment';
 
 @IonicPage()
@@ -22,6 +23,9 @@ export class LoginPage
     public navParams: NavParams
   )
   {
+      if(localStorage.getItem('is_login') == 'true'){
+        this.navCtrl.setRoot(MainTabPage);
+      }
   }
 
   ionViewDidLoad() {
@@ -45,10 +49,11 @@ export class LoginPage
           localStorage.setItem('is_login', 'true');
           localStorage.setItem('jwt', res.jwt);
 
+          localStorage.setItem('user_support', res.user_support);
           localStorage.setItem('user_fullname', res.user.user_fullname);
           localStorage.setItem('user_email', res.user.user_email);
 
-          navCtrlCopy.setRoot(HomePage);
+          navCtrlCopy.setRoot(MainTabPage);
         }else{
           window.alert(res.message);
         }
