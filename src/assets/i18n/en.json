@@ -1,12 +1,16 @@
 {
   "master": {
     "home": "Main Page",
+    "dashboard": "Dashboard",
     "categories": "Categories",
     "category": "Category",
     "recording": "Recording",
       "record_add": "Add Record",
+    "tickets": "Tickets",
     "report": "Report",
+    "reports": "Reports",
     "settings": "Settings",
+    "users": "Users",
 
     "language": "Language",
     "indonesia": "Indonesia",

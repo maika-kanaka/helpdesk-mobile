@@ -1,6 +1,6 @@
 <ion-tabs>
-    <ion-tab [root]="dashboardRoot" tabTitle="Dashboard" tabIcon="information-circle"></ion-tab>
-    <ion-tab [root]="ticketsRoot" tabTitle="Tickets" tabIcon="information-circle"></ion-tab>
-    <ion-tab [root]="reportsRoot" tabTitle="Reports" tabIcon="information-circle"></ion-tab>
-    <ion-tab [root]="usersRoot" tabTitle="Users" tabIcon="information-circle"></ion-tab>
+    <ion-tab [root]="dashboardRoot" tabTitle=" {{ 'master.dashboard' | translate }}" tabIcon="home"></ion-tab>
+    <ion-tab [root]="ticketsRoot" tabTitle=" {{ 'master.tickets' | translate }}" tabIcon="briefcase"></ion-tab>
+    <ion-tab [root]="reportsRoot" tabTitle=" {{ 'master.reports' | translate }}" tabIcon="barcode"></ion-tab>
+    <ion-tab [root]="usersRoot" tabTitle=" {{ 'master.users' | translate }}" tabIcon="contacts"></ion-tab>
 </ion-tabs>

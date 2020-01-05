@@ -9,18 +9,18 @@ import { LoginPage } from '../pages/login/login';
 @Component({
   templateUrl: 'app.html'
 })
-export class MyApp 
+export class MyApp
 {
   rootPage:any = LoginPage;
 
   constructor(
-    public platform: Platform, 
-    public statusBar: StatusBar, 
+    public platform: Platform,
+    public statusBar: StatusBar,
     public splashScreen: SplashScreen,
     private translate: TranslateService
-  ) 
+  )
   {
-    // init 
+    // init
     this.initializeApp();
 
     // language
