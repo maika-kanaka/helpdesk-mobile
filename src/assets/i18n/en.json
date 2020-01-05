@@ -41,6 +41,20 @@
     "its_free": "It's free and always will be."
   },
 
+  "signup": {
+    "username": "Username"
+  },
+
+  "validators": {
+    "required": "The {{field}} is required.",
+    "minlength": "The {{field}} field must be at least {{length}} characters in length.",
+    "maxlength": "The {{field}} field cannot exceed {{length}} characters in length.",
+    "numeric": "The {{field}} field must contain only numeric characters.",
+    "unique": "The {{field}} field must contain a unique value.",
+    "email": "The {{field}} field must contain a valid email address.",
+    "match": "The {{field}} field must same from the {{field_compare}} field."
+  },
+
   "home": {
     "greeting": "Hi, {{ name }}"
   },

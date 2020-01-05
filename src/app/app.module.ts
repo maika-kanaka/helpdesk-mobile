@@ -9,6 +9,7 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 import { MyApp } from './app.component';
 import { LoginPage } from '../pages/login/login';
+import { SignUpPage } from '../pages/sign-up/sign-up';
 import { DashboardPage } from '../pages/dashboard/dashboard';
 import { TicketsPage } from '../pages/tickets/tickets';
 import { ReportsPage } from '../pages/reports/reports';
@@ -19,6 +20,7 @@ import { MainTabPage } from '../pages/main-tab/main-tab';
   declarations: [
     MyApp,
     LoginPage,
+    SignUpPage,
     DashboardPage,
     TicketsPage,
     ReportsPage,
@@ -41,6 +43,7 @@ import { MainTabPage } from '../pages/main-tab/main-tab';
   entryComponents: [
     MyApp,
     LoginPage,
+    SignUpPage,
     DashboardPage,
     TicketsPage,
     ReportsPage,

@@ -1,0 +1,104 @@
+
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title> {{ 'login.create_a_new_account' | translate }} </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="signUpForm" novalidate (submit)="submitSignUp()">
+
+    <ion-list>
+
+      <ion-item>
+        <ion-label stacked>{{ 'master.fullname' | translate }}*</ion-label>
+        <ion-input type="text" formControlName="fullname"></ion-input>
+      </ion-item>
+
+        <div *ngIf="f.fullname.hasError('required') && f.fullname.touched">
+          <ion-item lines="none" class="invalid-feedback">
+            {{ 'validators.required' | translate:{'field': this.translate.instant('master.fullname') } }}
+          </ion-item>
+        </div>
+
+      <ion-item>
+        <ion-label stacked>{{ 'signup.username' | translate }}*</ion-label>
+        <ion-input type="text" formControlName="username"></ion-input>
+      </ion-item>
+
+        <div *ngIf="f.username.hasError('required') && f.username.touched">
+          <ion-item lines="none" class="invalid-feedback">
+            {{ 'validators.required' | translate:{'field': this.translate.instant('signup.username') } }}
+          </ion-item>
+        </div>
+
+        <div *ngIf="f.username.hasError('required') == false && f.username.hasError('minlength') && f.username.touched">
+          <ion-item lines="none" class="invalid-feedback">
+            {{ 'validators.minlength' | translate:{'field': this.translate.instant('signup.username'), 'length': '4'} }}
+          </ion-item>
+        </div>
+
+        <div *ngIf="f.username.hasError('required') == false && f.username.hasError('minlength') == false && f.username.hasError('maxlength') && f.username.touched">
+          <ion-item lines="none" class="invalid-feedback">
+            {{ 'validators.maxlength' | translate:{'field': this.translate.instant('signup.username'), 'length': '10'} }}
+            maxlength
+          </ion-item>
+        </div>
+
+      <ion-item>
+        <ion-label stacked>{{ 'master.email' | translate }}*</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+
+        <div *ngIf="f.email.hasError('required') && f.email.touched">
+          <ion-item lines="none" class="invalid-feedback">
+            {{ 'validators.required' | translate:{'field': this.translate.instant('master.email') } }}
+          </ion-item>
+        </div>
+
+        <div *ngIf="f.email.hasError('required') == false && f.email.hasError('email') && f.email.touched">
+          <ion-item lines="none" class="invalid-feedback">
+            {{ 'validators.email' | translate:{'field': this.translate.instant('master.email') } }}
+          </ion-item>
+        </div>
+
+      <ion-item>
+        <ion-label stacked>{{ 'master.password' | translate }}*</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+
+        <div *ngIf="f.password.hasError('required') && f.password.touched">
+          <ion-item lines="none" class="invalid-feedback">
+            {{ 'validators.required' | translate:{'field': this.translate.instant('master.password') } }}
+          </ion-item>
+        </div>
+
+        <div *ngIf="f.password.hasError('required') == false && f.password.hasError('minlength') && f.password.touched">
+          <ion-item lines="none" class="invalid-feedback">
+            {{ 'validators.minlength' | translate:{'field': this.translate.instant('master.password'), 'length': '5'} }}
+          </ion-item>
+        </div>
+
+      <ion-item>
+        <ion-label stacked>{{ 'master.confirm_password' | translate }}*</ion-label>
+        <ion-input type="password" formControlName="confirm_password"></ion-input>
+      </ion-item>
+
+      <div *ngIf="f.confirm_password.touched && signUpForm.hasError('notSame')">
+        <ion-item lines="none" class="invalid-feedback">
+          {{ 'validators.match' | translate:{'field': this.translate.instant('master.confirm_password'), 'field_compare': this.translate.instant('master.password')} }}
+        </ion-item>
+      </div>
+
+      <div padding class="btn-signup">
+        <button type="submit"
+            ion-button color="orange"
+            [disabled]="(signUpForm.pristine || signUpForm.invalid)" class="btn btn-success">
+            {{ 'login.sign_up' | translate }}
+        </button>
+      </div>
+
+    </ion-list>
+
+  </form>
+</ion-content>
