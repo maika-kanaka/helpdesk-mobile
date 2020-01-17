@@ -33,13 +33,13 @@ export class UserEditPage {
   submitted = false;
   is_block = false;
 
-  public user: object = {
+  public user: any = {
     user_id: "",
     user_name: "",
     user_fullname: "",
     user_email: "",
     user_photo: "",
-    is_block: false
+    is_block: ""
   };
   public user_password: string = "";
 
