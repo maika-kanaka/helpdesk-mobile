@@ -1,0 +1,141 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="closeModal()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title> {{ 'user.edit_user' | translate }} </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="userEditForm" novalidate (submit)="updateUser()">
+    <ion-list>
+      <ion-item>
+        <ion-label stacked>{{ 'master.fullname' | translate }}</ion-label>
+        <ion-input
+          type="text"
+          formControlName="fullname"
+          [(ngModel)]="user.user_fullname"
+          placeholder=""
+        ></ion-input>
+      </ion-item>
+
+      <div *ngIf="f.fullname.hasError('required') && f.fullname.touched">
+        <ion-item lines="none" class="invalid-feedback">
+          {{ 'validators.required' | translate:{'field':
+          this.translate.instant('master.fullname') } }}
+        </ion-item>
+      </div>
+
+      <ion-item>
+        <ion-label stacked>{{ 'master.username' | translate }}*</ion-label>
+        <ion-input
+          type="text"
+          formControlName="username"
+          [(ngModel)]="user.user_name"
+          placeholder=""
+        ></ion-input>
+      </ion-item>
+
+      <div *ngIf="f.username.hasError('required') && f.username.touched">
+        <ion-item lines="none" class="invalid-feedback">
+          {{ 'validators.required' | translate:{'field': this.translate.instant('signup.username') } }}
+        </ion-item>
+      </div>
+
+      <div *ngIf="f.username.hasError('required') == false && f.username.hasError('minlength') && f.username.touched">
+        <ion-item lines="none" class="invalid-feedback">
+          {{ 'validators.minlength' | translate:{'field': this.translate.instant('signup.username'), 'length': '4'} }}
+        </ion-item>
+      </div>
+
+      <div *ngIf="f.username.hasError('required') == false && f.username.hasError('minlength') == false && f.username.hasError('maxlength') && f.username.touched">
+        <ion-item lines="none" class="invalid-feedback">
+          {{ 'validators.maxlength' | translate:{'field': this.translate.instant('signup.username'), 'length': '10'} }}
+          maxlength
+        </ion-item>
+      </div>
+
+      <ion-item>
+        <ion-label stacked>{{ 'master.email' | translate }}*</ion-label>
+        <ion-input
+          type="email"
+          formControlName="email"
+          [(ngModel)]="user.user_email"
+          placeholder=""
+        ></ion-input>
+      </ion-item>
+
+      <div *ngIf="f.email.hasError('required') && f.email.touched">
+        <ion-item lines="none" class="invalid-feedback">
+          {{ 'validators.required' | translate:{'field': this.translate.instant('master.email') } }}
+        </ion-item>
+      </div>
+
+      <div *ngIf="f.email.hasError('required') == false && f.email.hasError('email') && f.email.touched">
+        <ion-item lines="none" class="invalid-feedback">
+          {{ 'validators.email' | translate:{'field': this.translate.instant('master.email') } }}
+        </ion-item>
+      </div>
+
+      <ion-item>
+        <ion-label stacked>{{ 'master.password' | translate }} (leave blank if you don't want to replace it) </ion-label>
+        <ion-input
+          type="password"
+          formControlName="password"
+          [(ngModel)]="user_password"
+          placeholder=""
+        ></ion-input>
+      </ion-item>
+
+      <div *ngIf="f.password.hasError('required') == false && f.password.hasError('minlength') && f.password.touched">
+        <ion-item lines="none" class="invalid-feedback">
+          {{ 'validators.minlength' | translate:{'field': this.translate.instant('master.password'), 'length': '5'} }}
+        </ion-item>
+      </div>
+
+      <ion-item>
+        <ion-label stacked>{{ 'master.description' | translate }}*</ion-label>
+        <ion-input
+          type="text"
+          formControlName="description"
+          [(ngModel)]="user.user_description"
+          placeholder=""
+        ></ion-input>
+      </ion-item>
+
+      <div *ngIf="f.description.hasError('maxlength') && f.description.touched">
+        <ion-item lines="none" class="invalid-feedback">
+          {{ 'validators.maxlength' | translate:{'field': this.translate.instant('master.description'), 'length': '255'} }}
+        </ion-item>
+      </div>
+
+      <ion-item>
+        <ion-label> {{ 'user.group_access' | translate }} </ion-label>
+        <ion-select formControlName="group_id" [(ngModel)]="user.group_id">
+          <ion-option value="2"> Technician </ion-option>
+          <ion-option value="requester"> Requester </ion-option>
+          <ion-option value="1"> Super Admin </ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label> {{ 'user.block' | translate }} </ion-label>
+        <ion-toggle formControlName="is_block" [(ngModel)]="is_block"></ion-toggle>
+      </ion-item>
+
+      <button
+        type="submit"
+        class="save-button"
+        [disabled]="(userEditForm.pristine || userEditForm.invalid)"
+        ion-button
+        block
+      >
+        {{ 'master.update' | translate }}
+      </button>
+    </ion-list>
+  </form>
+</ion-content>

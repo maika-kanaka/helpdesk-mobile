@@ -23,8 +23,16 @@
     "location": "Location",
     "screenshot": "Screenshot",
 
+    "description": "Description",
+    "edit": "Edit",
+    "delete": "Delete",
+    "modify": "Modify",
+    "blockir": "Blockir",
+    "action": "Action",
     "save": "Save",
+    "update": "Update",
     "fullname": "Fullname",
+    "username": "Username",
     "email": "Email",
     "email_or_username": "Email or Username",
     "password": "Password",
@@ -38,11 +46,13 @@
     "create_a_new_account": "Create a new account",
     "sign_up": "Sign Up",
     "forgot_password": "Forgot Password ?",
-    "its_free": "It's free and always will be."
+    "its_free": "It's free and always will be.",
+    "user_is_new": "Your username are not included in any access groups"
   },
 
   "signup": {
-    "username": "Username"
+    "username": "Username",
+    "registration_success": "Registration successfully"
   },
 
   "validators": {
@@ -57,6 +67,16 @@
 
   "home": {
     "greeting": "Hi, {{ name }}"
+  },
+
+  "user": {
+    "edit_user": "Edit User",
+    "edit_profile": "Edit Profile",
+    "blockir": "Blockir",
+    "block": "Block",
+    "group_access": "Group Access",
+    "this_user_is_blockir": "This username is blocked",
+    "success_updated": "User was updated successfully"
   },
 
   "setting": {

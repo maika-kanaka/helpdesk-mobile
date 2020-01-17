@@ -14,6 +14,7 @@ import { DashboardPage } from '../pages/dashboard/dashboard';
 import { TicketsPage } from '../pages/tickets/tickets';
 import { ReportsPage } from '../pages/reports/reports';
 import { UsersPage } from '../pages/users/users';
+import { UserEditPage } from '../pages/user-edit/user-edit';
 import { MainTabPage } from '../pages/main-tab/main-tab';
 
 @NgModule({
@@ -25,6 +26,7 @@ import { MainTabPage } from '../pages/main-tab/main-tab';
     TicketsPage,
     ReportsPage,
     UsersPage,
+    UserEditPage,
     MainTabPage
   ],
   imports: [
@@ -48,6 +50,7 @@ import { MainTabPage } from '../pages/main-tab/main-tab';
     TicketsPage,
     ReportsPage,
     UsersPage,
+    UserEditPage,
     MainTabPage
   ],
   providers: [
