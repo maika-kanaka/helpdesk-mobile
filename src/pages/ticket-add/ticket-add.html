@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="closeModal()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title> {{ 'ticket.add_ticket' | translate }} </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="ticketAddForm" novalidate (submit)="saveTicket()">
+    <ion-item>
+      <ion-label> {{ 'master.title' | translate }}* </ion-label>
+      <ion-input type="text" formControlName="title" placeholder=""></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label> {{ 'master.category' | translate }}* </ion-label>
+      <ion-select formControlName="category">
+        <ion-option *ngFor="let cat of categories" [value]="cat.category_id">
+          {{ cat.category_name }}
+        </ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label> {{ 'ticket.priority' | translate }} </ion-label>
+      <ion-toggle
+        formControlName="priority"
+        [(ngModel)]="priority"
+      ></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>{{ 'master.description' | translate }}*</ion-label>
+      <ion-textarea formControlName="description"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>
+        {{ 'master.photo' | translate }}
+      </ion-label>
+      <ion-input
+        clearInput="true"
+        type="file"
+        accept="image/*"
+        (change)="fileChange($event)"
+        formControlName="photo"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <img *ngIf="photoPreview" [src]="photoPreview" />
+    </ion-item>
+
+    <button
+      type="submit"
+      class="save-button"
+      [disabled]="(ticketAddForm.pristine || ticketAddForm.invalid)"
+      ion-button
+      block
+    >
+      {{ 'master.save' | translate }}
+    </button>
+  </form>
+</ion-content>

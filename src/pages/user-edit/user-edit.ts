@@ -137,6 +137,6 @@ export class UserEditPage {
   }
 
   closeModal() {
-    this.viewCtrl.dismiss();
+    this.viewCtrl.dismiss({success_updated: true});
   }
 }

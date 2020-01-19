@@ -11,55 +11,40 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-card>
+
+  <ion-card  *ngFor="let tic of tickets">
     <ion-card-content>
-      <ion-note>Dec 2019, 11. 09:00 AM</ion-note>
+      <ion-note> {{ usingMomentJs(tic.created_at).fromNow() }} </ion-note>
 
       <ion-card-title>
-        Komputer tidak bisa menyala dari jam tiga pagi
+        {{ tic.ticket_title }}
       </ion-card-title>
 
       <p>
         <ion-icon name="folder"></ion-icon>
-        Hardware:
-        The most popular industrial group ever, and largely
-        responsible for bringing the music to a mass audience.
+        {{ tic.category_name }}:
+        {{ tic.ticket_desc }}
       </p>
     </ion-card-content>
 
     <ion-row>
       <ion-col>
-        <button ion-button icon-start clear item-end>
+        <button (click)="modalView(tic.ticket_id)" ion-button icon-start clear item-end>
           <ion-icon name="eye"></ion-icon>
           <div>View</div>
         </button>
       </ion-col>
 
       <ion-col align-self-center text-center>
-        <ion-note>
+        <ion-note *ngIf="tic.ticket_priority == 'high'">
           <span style="color:red">High Priority</span>
         </ion-note>
       </ion-col>
     </ion-row>
-
-    <!-- <ion-row>
-      <ion-col>
-        <button ion-button icon-start clear small>
-          <ion-icon name="checkmark-circle"></ion-icon>
-          <div>Terima</div>
-        </button>
-      </ion-col>
-      <ion-col>
-        <button ion-button icon-start clear small>
-          <ion-icon ios="ios-close-circle" md="md-close-circle"></ion-icon>
-          <div>Tolak</div>
-        </button>
-      </ion-col>
-      <ion-col align-self-center text-center>
-        <ion-note>
-          <span style="color:red">High Priority</span>
-        </ion-note>
-      </ion-col>
-    </ion-row> -->
   </ion-card>
+
+  <ion-fab bottom center>
+    <button (click)="modalAdd()" ion-fab mini><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+
 </ion-content>

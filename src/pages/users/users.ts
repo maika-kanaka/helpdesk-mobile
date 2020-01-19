@@ -46,8 +46,10 @@ export class UsersPage {
   modalEditUser(usid) {
     const modal = this.modalCtrl.create(UserEditPage, {user_id: usid});
 
-    modal.onDidDismiss(() => {
-      this.getUsers();
+    modal.onDidDismiss((data) => {
+      if(data.success_updated){
+        this.getUsers();
+      }
     });
 
     modal.present();

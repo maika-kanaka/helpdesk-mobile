@@ -23,14 +23,24 @@
     "location": "Location",
     "screenshot": "Screenshot",
 
+    "delete_photo": "Delete Photo",
+    "photo": "Photo",
+    "code": "Code",
+    "title": "Title",
+    "status": "Status",
     "description": "Description",
+
     "edit": "Edit",
     "delete": "Delete",
+    "cancel": "Cancel",
+    "reject": "Reject",
+    "accept": "Accept",
     "modify": "Modify",
     "blockir": "Blockir",
     "action": "Action",
     "save": "Save",
     "update": "Update",
+
     "fullname": "Fullname",
     "username": "Username",
     "email": "Email",
@@ -39,7 +49,8 @@
     "confirm_password": "Confirm Password",
     "login": "Login",
     "logout": "Logout",
-    "or": "Or"
+    "or": "Or",
+    "please_wait": "Please wait"
   },
 
   "login": {
@@ -77,6 +88,14 @@
     "group_access": "Group Access",
     "this_user_is_blockir": "This username is blocked",
     "success_updated": "User was updated successfully"
+  },
+
+  "ticket": {
+    "add_ticket": "Add Ticket",
+    "view_ticket": "View Ticket",
+    "priority": "Priority",
+    "request_to": "Request to",
+    "success_added": "Successfully added ticket"
   },
 
   "setting": {

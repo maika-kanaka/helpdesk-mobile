@@ -58,9 +58,10 @@ export class LoginPage
             localStorage.setItem('jwt', res.jwt);
 
             localStorage.setItem('user_support', res.user_support);
-            localStorage.setItem('user_fullname', res.user.user_fullname);
-            localStorage.setItem('user_email', res.user.user_email);
             localStorage.setItem('user_id', res.user.user_id);
+            localStorage.setItem('group_id', res.user.group_id);
+
+            localStorage.setItem('can_access_menu', JSON.stringify(res.can_access_menu));
 
             navCtrlCopy.setRoot(MainTabPage);
           }

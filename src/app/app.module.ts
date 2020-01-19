@@ -12,6 +12,8 @@ import { LoginPage } from '../pages/login/login';
 import { SignUpPage } from '../pages/sign-up/sign-up';
 import { DashboardPage } from '../pages/dashboard/dashboard';
 import { TicketsPage } from '../pages/tickets/tickets';
+import { TicketAddPage } from '../pages/ticket-add/ticket-add';
+import { TicketViewPage } from '../pages/ticket-view/ticket-view';
 import { ReportsPage } from '../pages/reports/reports';
 import { UsersPage } from '../pages/users/users';
 import { UserEditPage } from '../pages/user-edit/user-edit';
@@ -24,6 +26,8 @@ import { MainTabPage } from '../pages/main-tab/main-tab';
     SignUpPage,
     DashboardPage,
     TicketsPage,
+    TicketAddPage,
+    TicketViewPage,
     ReportsPage,
     UsersPage,
     UserEditPage,
@@ -48,6 +52,8 @@ import { MainTabPage } from '../pages/main-tab/main-tab';
     SignUpPage,
     DashboardPage,
     TicketsPage,
+    TicketAddPage,
+    TicketViewPage,
     ReportsPage,
     UsersPage,
     UserEditPage,

@@ -1,6 +1,8 @@
+
+
 <ion-tabs>
-    <ion-tab [root]="dashboardRoot" tabTitle=" {{ 'master.dashboard' | translate }}" tabIcon="home"></ion-tab>
-    <ion-tab [root]="ticketsRoot" tabTitle=" {{ 'master.tickets' | translate }}" tabIcon="briefcase"></ion-tab>
-    <ion-tab [root]="reportsRoot" tabTitle=" {{ 'master.reports' | translate }}" tabIcon="barcode"></ion-tab>
-    <ion-tab [root]="usersRoot" tabTitle=" {{ 'master.users' | translate }}" tabIcon="contacts"></ion-tab>
+  <ion-tab [root]="dashboardRoot" tabTitle=" {{ 'master.dashboard' | translate }}" tabIcon="home"></ion-tab>
+  <ion-tab [root]="ticketsRoot" tabTitle=" {{ 'master.tickets' | translate }}" tabIcon="briefcase"></ion-tab>
+  <ion-tab [root]="reportsRoot" tabTitle=" {{ 'master.reports' | translate }}" tabIcon="barcode"></ion-tab>
+  <ion-tab [show]="can_access_users" [root]="usersRoot" tabTitle=" {{ 'master.users' | translate }}" tabIcon="contacts"></ion-tab>
 </ion-tabs>

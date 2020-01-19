@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="closeModal()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title> {{ 'ticket.view_ticket' | translate }} </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      <div class="card-title text-center"> {{ ticket.ticket_title }} </div>
+    </ion-card-header>
+
+    <ion-card-content>
+      <img *ngIf="ticket.ticket_photo != null" [src]="ENV.web_url + '/imgs/ticket/' + ticket.ticket_photo"/>
+
+      <div padding>
+        <ion-grid>
+          <ion-row>
+            <ion-col class="col-label" col-4> {{ 'master.code' | translate }} </ion-col>
+            <ion-col col-8> {{ ticket.ticket_code }} </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col class="col-label" col-4> {{ 'master.date' | translate }} </ion-col>
+            <ion-col col-8> {{ usingMomentJs(ticket.created_at).format('MMM DD, YYYY hh:mm A') }} </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col class="col-label" col-4> {{ 'master.category' | translate }} </ion-col>
+            <ion-col col-8> {{ ticket.category_name }} </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col class="col-label" col-4> {{ 'ticket.priority' | translate }} </ion-col>
+            <ion-col col-8> {{ ticket.ticket_priority }} </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col class="col-label" col-4> {{ 'master.status' | translate }} </ion-col>
+            <ion-col col-8> {{ ticket.ticket_status }} </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <div class="ticket-desc">
+          {{ ticket.ticket_desc }}
+        </div>
+      </div>
+
+      <ion-row *ngIf="can_edit_cancel">
+        <ion-col>
+          <button color="secondary" ion-button icon-start clear small>
+            <ion-icon name="create"></ion-icon>
+            <div> {{ 'master.edit' | translate }} </div>
+          </button>
+        </ion-col>
+
+        <ion-col>
+          <button color="danger" ion-button icon-start clear small>
+            <ion-icon name="close"></ion-icon>
+            <div> {{ 'master.cancel' | translate }} </div>
+          </button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row *ngIf="can_accept_reject">
+        <ion-col>
+          <button (click)="acceptTicket(ticket.ticket_id)" color="secondary" ion-button icon-start clear small>
+            <ion-icon name="checkmark-circle-outline"></ion-icon>
+            <div> {{ 'master.accept' | translate }} </div>
+          </button>
+        </ion-col>
+
+        <ion-col>
+          <button (click)="rejectTicket(ticket.ticket_id)" color="danger" ion-button icon-start clear small>
+            <ion-icon name="close"></ion-icon>
+            <div> {{ 'master.reject' | translate }} </div>
+          </button>
+        </ion-col>
+      </ion-row>
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>

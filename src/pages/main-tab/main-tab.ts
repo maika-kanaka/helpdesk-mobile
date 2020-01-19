@@ -12,11 +12,25 @@ import { UsersPage } from '../users/users';
 })
 export class MainTabPage {
 
-  dashboardRoot = DashboardPage
-  ticketsRoot = TicketsPage
-  reportsRoot = ReportsPage
-  usersRoot = UsersPage
+  dashboardRoot = DashboardPage;
+  ticketsRoot = TicketsPage;
+  reportsRoot = ReportsPage;
+  usersRoot = UsersPage;
+
+  public can_access_all: boolean = false;
+  public can_access_users: boolean = true;
 
   constructor(public navCtrl: NavController) {}
+
+  ionViewDidLoad()
+  {
+    if(localStorage.getItem('group_id') == '1' || localStorage.getItem('group_id') == '2'){
+      this.can_access_all = true;
+    }
+
+    if(localStorage.getItem("group_id") == "3"){
+      this.can_access_users = false;
+    }
+  }
 
 }
