@@ -6,12 +6,13 @@
       </button>
     </ion-buttons>
 
-    <ion-title> {{ 'user.edit_user' | translate }} </ion-title>
+    <ion-title> {{ 'master.edit_profile' | translate }} </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  <form [formGroup]="userEditForm" novalidate (submit)="updateUser()">
+
+  <form [formGroup]="profilEditForm" novalidate (submit)="updateProfil()">
     <ion-list>
       <ion-item>
         <ion-label stacked>{{ 'master.fullname' | translate }}</ion-label>
@@ -82,7 +83,7 @@
       </div>
 
       <ion-item>
-        <ion-label stacked>{{ 'master.password' | translate }} (leave blank if you don't want to replace it) </ion-label>
+        <ion-label stacked>{{ 'master.password' | translate }} </ion-label>
         <ion-input
           type="password"
           formControlName="password"
@@ -97,40 +98,10 @@
         </ion-item>
       </div>
 
-      <ion-item>
-        <ion-label stacked>{{ 'master.description' | translate }}*</ion-label>
-        <ion-input
-          type="text"
-          formControlName="description"
-          [(ngModel)]="user.user_description"
-          placeholder=""
-        ></ion-input>
-      </ion-item>
-
-      <div *ngIf="f.description.hasError('maxlength') && f.description.touched">
-        <ion-item lines="none" class="invalid-feedback">
-          {{ 'validators.maxlength' | translate:{'field': this.translate.instant('master.description'), 'length': '255'} }}
-        </ion-item>
-      </div>
-
-      <ion-item>
-        <ion-label> {{ 'user.group_access' | translate }} </ion-label>
-        <ion-select formControlName="group_id" [(ngModel)]="user.group_id">
-          <ion-option value="2"> Technician </ion-option>
-          <ion-option value="3"> Requester </ion-option>
-          <!-- <ion-option value="1"> Super Admin </ion-option> -->
-        </ion-select>
-      </ion-item>
-
-      <ion-item>
-        <ion-label> {{ 'user.block' | translate }} </ion-label>
-        <ion-toggle formControlName="is_block" [(ngModel)]="is_block"></ion-toggle>
-      </ion-item>
-
       <button
         type="submit"
         class="save-button"
-        [disabled]="(userEditForm.pristine || userEditForm.invalid)"
+        [disabled]="(profilEditForm.pristine || profilEditForm.invalid)"
         ion-button
         block
       >
@@ -138,4 +109,5 @@
       </button>
     </ion-list>
   </form>
+
 </ion-content>

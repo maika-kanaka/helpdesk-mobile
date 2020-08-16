@@ -19,13 +19,13 @@
     "sunda": "Sunda",
     "choose": "Choose",
     "date": "Date",
-    "notes": "Notes",
     "location": "Location",
     "screenshot": "Screenshot",
 
     "delete_photo": "Delete Photo",
     "photo": "Photo",
     "code": "Code",
+    "notes": "Notes",
     "title": "Title",
     "status": "Status",
     "description": "Description",
@@ -40,6 +40,22 @@
     "action": "Action",
     "save": "Save",
     "update": "Update",
+    "yes": "Yes",
+    "no": "No",
+    "confirmation": "Confirmation",
+    "are_you_sure_to_accept": "Are you sure to accept this data ?",
+    "are_you_sure_to_reject": "Are you sure to reject this data ?",
+    "are_you_sure_to_logout": "Are you sure to logout ?",
+    "are_you_sure_to_cancel": "Are you sure to cancel this data ?",
+    "rejected_at": "Rejected at",
+    "rejected_by": "Rejected by",
+    "accepted_at": "Accepted at",
+    "accepted_by": "Accepted by",
+    "date_from": "Date From",
+    "date_to": "Date To",
+    "date_accepted": "Date Accepted",
+    "please_explain_your_reason": "Please explain your reason",
+    "edit_profile": "Edit Profile",
 
     "fullname": "Fullname",
     "username": "Username",
@@ -50,7 +66,8 @@
     "login": "Login",
     "logout": "Logout",
     "or": "Or",
-    "please_wait": "Please wait"
+    "please_wait": "Please wait",
+    "tracking_status": "Tracking Status"
   },
 
   "login": {
@@ -92,6 +109,7 @@
 
   "ticket": {
     "add_ticket": "Add Ticket",
+    "edit_ticket": "Edit Ticket",
     "view_ticket": "View Ticket",
     "priority": "Priority",
     "request_to": "Request to",

@@ -45,6 +45,31 @@
             <ion-col class="col-label" col-4> {{ 'master.status' | translate }} </ion-col>
             <ion-col col-8> {{ ticket.ticket_status }} </ion-col>
           </ion-row>
+
+          <ion-row *ngIf="ticket.ticket_status == 'accepted'">
+            <ion-col class="col-label" col-4> {{ 'master.date_accepted' | translate }} </ion-col>
+            <ion-col col-8> {{ usingMomentJs(ticket.accepted_at).format('MMM DD, YYYY hh:mm A') }} </ion-col>
+          </ion-row>
+
+          <ion-row *ngIf="ticket.ticket_status == 'accepted'">
+            <ion-col class="col-label" col-4> {{ 'master.accepted_by' | translate }} </ion-col>
+            <ion-col col-8> {{ ticket.user_acc_fullname }} </ion-col>
+          </ion-row>
+
+          <ion-row *ngIf="ticket.ticket_status == 'rejected'">
+            <ion-col class="col-label" col-4> {{ 'master.rejected_at' | translate }} </ion-col>
+            <ion-col col-8> {{ usingMomentJs(ticket.rejected_at).format('MMM DD, YYYY hh:mm A') }} </ion-col>
+          </ion-row>
+
+          <ion-row *ngIf="ticket.ticket_status == 'rejected'">
+            <ion-col class="col-label" col-4> {{ 'master.rejected_by' | translate }} </ion-col>
+            <ion-col col-8> {{ ticket.user_reject_fullname }} </ion-col>
+          </ion-row>
+
+          <ion-row *ngIf="ticket.ticket_status == 'rejected'">
+            <ion-col class="col-label" col-4> {{ 'master.notes' | translate }} </ion-col>
+            <ion-col col-8> {{ ticket.rejected_notes }} </ion-col>
+          </ion-row>
         </ion-grid>
 
         <div class="ticket-desc">
@@ -54,14 +79,14 @@
 
       <ion-row *ngIf="can_edit_cancel">
         <ion-col>
-          <button color="secondary" ion-button icon-start clear small>
+          <button (click)="modalEdit(ticket.ticket_id)" color="secondary" ion-button icon-start clear small>
             <ion-icon name="create"></ion-icon>
             <div> {{ 'master.edit' | translate }} </div>
           </button>
         </ion-col>
 
         <ion-col>
-          <button color="danger" ion-button icon-start clear small>
+          <button (click)="cancelTicket(ticket.ticket_id)" color="danger" ion-button icon-start clear small>
             <ion-icon name="close"></ion-icon>
             <div> {{ 'master.cancel' | translate }} </div>
           </button>
@@ -83,6 +108,15 @@
           </button>
         </ion-col>
       </ion-row>
+
+      <button
+        (click)="modalTrackingStatus()"
+        type="submit"
+        ion-button
+        block
+      >
+        {{ 'master.tracking_status' | translate }}
+      </button>
 
     </ion-card-content>
   </ion-card>

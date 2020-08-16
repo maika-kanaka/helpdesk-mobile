@@ -12,4 +12,38 @@
 
 <ion-content padding>
 
+  <ion-list>
+
+    <ion-item>
+      <ion-label stacked> {{ 'master.date_from' | translate }} </ion-label>
+      <ion-datetime value="" display-format="YYYY-MM-DD" [(ngModel)]="date_from" display-timezone="utc"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked> {{ 'master.date_to' | translate }} </ion-label>
+      <ion-datetime value="" display-format="YYYY-MM-DD" [(ngModel)]="date_to" display-timezone="utc"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label> {{ 'master.category' | translate }} </ion-label>
+      <ion-select [(ngModel)]="category">
+        <ion-option value="1">Hardware</ion-option>
+        <ion-option value="3">Network</ion-option>
+        <ion-option value="2">Software</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <button
+        type="submit"
+        (click)="createReport()"
+        ion-button
+        block
+      >
+        Create Report
+      </button>
+    </ion-item>
+
+  </ion-list>
+
 </ion-content>

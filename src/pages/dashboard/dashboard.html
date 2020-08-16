@@ -15,7 +15,7 @@
       <h3> {{ profile.user_name }} </h3>
       <p> {{ profile.user_email }} </p>
       <p>
-        <button ion-button> {{ 'user.edit_profile' | translate }} </button>
+        <button ion-button (click)="modalProfilEdit()"> {{ 'user.edit_profile' | translate }} </button>
         <button ion-button outline (click)="logout()"> {{ 'master.logout' | translate }} </button>
       </p>
     </ion-item>

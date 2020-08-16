@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
 import {
   IonicPage,
   NavController,
@@ -24,11 +24,12 @@ import $ from "jquery";
 
 @IonicPage()
 @Component({
-  selector: "page-user-edit",
-  templateUrl: "user-edit.html"
+  selector: 'page-profil-edit',
+  templateUrl: 'profil-edit.html',
 })
-export class UserEditPage {
-  userEditForm: FormGroup;
+export class ProfilEditPage {
+
+  profilEditForm: FormGroup;
   submitted = false;
   is_block = false;
 
@@ -37,8 +38,7 @@ export class UserEditPage {
     user_name: "",
     user_fullname: "",
     user_email: "",
-    user_photo: "",
-    is_block: ""
+    user_photo: ""
   };
   public user_password: string = "";
 
@@ -68,7 +68,7 @@ export class UserEditPage {
   }
 
   get f() {
-    return this.userEditForm.controls;
+    return this.profilEditForm.controls;
   }
 
   fillForm(res) {
@@ -84,22 +84,19 @@ export class UserEditPage {
   }
 
   createForm() {
-    this.userEditForm = this.formBuilder.group({
+    this.profilEditForm = this.formBuilder.group({
       fullname: ["", Validators.required],
       username: [
         "",
         [Validators.required, Validators.minLength(4), Validators.maxLength(12)]
       ],
       email: ["", [Validators.required, Validators.email]],
-      password: ["", [Validators.minLength(5)]],
-      group_id: ["", Validators.required],
-      description: ["", [Validators.maxLength(255)]],
-      is_block: [""]
+      password: ["", [Validators.minLength(5)]]
     });
   }
 
-  updateUser() {
-    let objDataSend = this.userEditForm.value;
+  updateProfil() {
+    let objDataSend = this.profilEditForm.value;
     objDataSend.user_id = this.navParams.get("user_id");
     objDataSend.jwt = localStorage.getItem("jwt");
 
@@ -138,4 +135,5 @@ export class UserEditPage {
   closeModal() {
     this.viewCtrl.dismiss({success_updated: true});
   }
+
 }
